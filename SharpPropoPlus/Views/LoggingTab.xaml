@@ -16,7 +16,7 @@
     <Grid>
         <StackPanel>
 
-            <controls:ControlContainer Title="Log Window" Description="Enable to show the log window.">
+            <controls:ControlContainer Title="显示日志窗口" Description="显示调试日志输出窗口">
                 <ToggleButton IsChecked="{Binding IsEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                               IsEnabled="False"
                               HorizontalAlignment="Right" 
@@ -25,7 +25,7 @@
                               Style="{StaticResource AnimatedSwitch}"/>
             </controls:ControlContainer>
 
-            <controls:ControlContainer Title="Input signal recording" Description="Enable to log the audio input to a file.">
+            <controls:ControlContainer Title="记录音频信号" Description="将输入的音频信号记录到文件中">
                 <ToggleButton IsChecked="{Binding IsEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                               IsEnabled="False" 
                               HorizontalAlignment="Right" 
@@ -34,7 +34,7 @@
                               Style="{StaticResource AnimatedSwitch}"/>
             </controls:ControlContainer>
 
-            <controls:ControlContainer Title="Pulse data recording" Description="Enable to log the pulse data to a file.">
+            <controls:ControlContainer Title="记录脉冲信号" Description="将脉冲信号记录到文件中">
                 <ToggleButton IsChecked="{Binding IsPulseRecordingEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                               HorizontalAlignment="Right" 
                               VerticalAlignment="Center" 

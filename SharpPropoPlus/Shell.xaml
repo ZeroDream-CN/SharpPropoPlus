@@ -12,7 +12,7 @@
     mc:Ignorable="d"
     IsToggleChecked="{Binding IsShellStateChecked, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"
     Style="{StaticResource MainWindow}"
-    Title="#PropoPlus" 
+    Title="SharpPropoPlus" 
     Height="600" 
     Width="800"
     InitialPage="{x:Type views:AudioConfig}"
@@ -29,11 +29,11 @@
     </controls:CustomWindow.SettingsMenu>-->
     
     <controls:CustomWindow.ToolBarItems>
-        <controls:ToolBarButton Content="Input" Type="{x:Type views:AudioConfig}"/>
-        <controls:ToolBarButton Content="Transmitter" Type="{x:Type views:TransmitterConfig}"/>
-        <controls:ToolBarButton Content="Filter" Type="{x:Type views:FilterConfig}"/>
-        <controls:ToolBarButton Content="Joystick" Type="{x:Type views:JoystickConfig}"/>
-        <controls:ToolBarButton Content="Advanced" Type="{x:Type views:AdvancedConfig}"/>
+        <controls:ToolBarButton Content="输入设置" Type="{x:Type views:AudioConfig}"/>
+        <controls:ToolBarButton Content="解码设置" Type="{x:Type views:TransmitterConfig}"/>
+        <controls:ToolBarButton Content="信号过滤" Type="{x:Type views:FilterConfig}"/>
+        <controls:ToolBarButton Content="驱动设置" Type="{x:Type views:JoystickConfig}"/>
+        <controls:ToolBarButton Content="高级设置" Type="{x:Type views:AdvancedConfig}"/>
     </controls:CustomWindow.ToolBarItems>
     
     <controls:CustomWindow.Footer>

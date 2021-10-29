@@ -2,6 +2,7 @@
 using System.Runtime.InteropServices;
 using System.Windows.Controls;
 using System.Windows.Interop;
+using System.Threading;
 using MvvmDialogs;
 using SharpPropoPlus.Audio;
 using SharpPropoPlus.Audio.Enums;
@@ -116,43 +117,78 @@ namespace SharpPropoPlus
 
         public void ShowMainWindow()
         {
-            Container.RegisterInstance<IDialogService>(new DialogService(), new ContainerControlledLifetimeManager());
+            try {
+                Console.WriteLine("debug 1");
+                Container.RegisterInstance<IDialogService>(new DialogService(), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.1");
+                Container.RegisterInstance<IShellViewModel>(new ShellViewModel(), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.2");
+                Container.RegisterInstance<IAudioConfigViewModel>(new AudioConfigViewModel(), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.3");
+                Container.RegisterInstance<IJoystickConfigViewModel>(new JoystickConfigViewModel(), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.4");
+                Container.RegisterInstance<ITransmitterConfigViewModel>(new TransmitterConfigViewModel(), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.5");
+                Container.RegisterInstance<IFilterConfigViewModel>(new FilterConfigViewModel(), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.6");
+                Container.RegisterType<IAdvancedConfigViewModel, AdvancedConfigViewModel>();
+                
+                Console.WriteLine("debug 1.7");
+                Container.RegisterType<ILoggingTabViewModel, LoggingTabViewModel>();
+                
+                Console.WriteLine("debug 1.8");
+                Container.RegisterType<IAboutTabViewModel, AboutTabViewModel>();
+                
+                Console.WriteLine("debug 1.9");
+                Container.RegisterType(typeof(UserControl), typeof(AudioConfig), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.91");
+                Container.RegisterType(typeof(UserControl), typeof(FilterConfig), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.92");
+                Container.RegisterType(typeof(UserControl), typeof(JoystickConfig), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.93");
+                Container.RegisterType(typeof(UserControl), typeof(TransmitterConfig), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.94");
+                Container.RegisterType(typeof(UserControl), typeof(AdvancedConfig), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.95");
+                Container.RegisterType(typeof(UserControl), typeof(LoggingTab), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 1.96");
+                Container.RegisterType(typeof(UserControl), typeof(AboutTab), new ContainerControlledLifetimeManager());
+                
+                Console.WriteLine("debug 2");
+                var mainWindow = Container.Resolve<Shell>(); // Creating Main window
+                
+                Console.WriteLine("debug 3");
+                mainWindow.Loaded += (sender, args) =>
+                {
+                    //var windowHandle = new WindowInteropHelper(mainWindow).Handle;
 
-            Container.RegisterInstance<IShellViewModel>(new ShellViewModel(), new ContainerControlledLifetimeManager());
-            Container.RegisterInstance<IAudioConfigViewModel>(new AudioConfigViewModel(), new ContainerControlledLifetimeManager());
-            Container.RegisterInstance<IJoystickConfigViewModel>(new JoystickConfigViewModel(), new ContainerControlledLifetimeManager());
-            Container.RegisterInstance<ITransmitterConfigViewModel>(new TransmitterConfigViewModel(), new ContainerControlledLifetimeManager());
-            Container.RegisterInstance<IFilterConfigViewModel>(new FilterConfigViewModel(), new ContainerControlledLifetimeManager());
+                    //var source = HwndSource.FromHwnd(windowHandle);
+                    //source?.AddHook(WndProc);
 
-            Container.RegisterType<IAdvancedConfigViewModel, AdvancedConfigViewModel>();
-            Container.RegisterType<ILoggingTabViewModel, LoggingTabViewModel>();
-            Container.RegisterType<IAboutTabViewModel, AboutTabViewModel>();
-            
-            Container.RegisterType(typeof(UserControl), typeof(AudioConfig), new ContainerControlledLifetimeManager());
-            Container.RegisterType(typeof(UserControl), typeof(FilterConfig), new ContainerControlledLifetimeManager());
-            Container.RegisterType(typeof(UserControl), typeof(JoystickConfig), new ContainerControlledLifetimeManager());
-            Container.RegisterType(typeof(UserControl), typeof(TransmitterConfig), new ContainerControlledLifetimeManager());
-            Container.RegisterType(typeof(UserControl), typeof(AdvancedConfig), new ContainerControlledLifetimeManager());
-            Container.RegisterType(typeof(UserControl), typeof(LoggingTab), new ContainerControlledLifetimeManager());
-            Container.RegisterType(typeof(UserControl), typeof(AboutTab), new ContainerControlledLifetimeManager());
-            
-            var mainWindow = Container.Resolve<Shell>(); // Creating Main window
+                    //DeviceNotification.RegisterDeviceNotification(windowHandle, true);
+                };
 
-            mainWindow.Loaded += (sender, args) =>
-            {
-                //var windowHandle = new WindowInteropHelper(mainWindow).Handle;
+                
+                Console.WriteLine("debug 4");
+                //System.Windows.Application.Current.MainWindow = mainWindow;
+                mainWindow.Show();
 
-                //var source = HwndSource.FromHwnd(windowHandle);
-                //source?.AddHook(WndProc);
-
-                //DeviceNotification.RegisterDeviceNotification(windowHandle, true);
-            };
-
-
-            //System.Windows.Application.Current.MainWindow = mainWindow;
-            mainWindow.Show();
-
-            //System.Windows.Application.Current.MainWindow.Show();
+                //System.Windows.Application.Current.MainWindow.Show();
+            } catch(Exception ex) {
+                Console.WriteLine(ex);
+            }
         }
 
         //private static IntPtr WndProc(IntPtr hwnd, int msg, IntPtr wParam, IntPtr lParam, ref bool handled)

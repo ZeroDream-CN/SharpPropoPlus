@@ -5,6 +5,7 @@ using SharpPropoPlus.Events;
 using SharpPropoPlus.Interfaces;
 using SharpPropoPlus.vJoyMonitor;
 using vJoyInterfaceWrap;
+using System;
 
 namespace SharpPropoPlus.ViewModels
 {
@@ -18,6 +19,7 @@ namespace SharpPropoPlus.ViewModels
 
             using (var enumerator = new DeviceEnumerator())
             {
+                Console.WriteLine("debug JoystickConfigViewModel 1");
                 Devices = new ReadOnlyObservableCollection<DeviceInformation>(
                     new ObservableCollection<DeviceInformation>(
                         enumerator.GetDevices(new[]
@@ -26,7 +28,7 @@ namespace SharpPropoPlus.ViewModels
                             VjdStat.VJD_STAT_FREE,
                             VjdStat.VJD_STAT_OWN,
                         }).OrderBy(ob => ob.Id)));
-
+                Console.WriteLine("debug JoystickConfigViewModel 2");
                 this.SelectedDeviceItem = Devices.FirstOrDefault();
             }
 

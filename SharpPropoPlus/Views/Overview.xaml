@@ -56,11 +56,11 @@
         
         <StackPanel Orientation="Vertical" Grid.Column="0" Grid.Row="0" Grid.ColumnSpan="4" Margin="0 0 0 8"  >
             <Border HorizontalAlignment="Stretch" SnapsToDevicePixels="True" BorderThickness="0 0 0 1" BorderBrush="{StaticResource LightBorderColorBrush}"/>
-            <TextBlock Style="{StaticResource TextBlockHeaderStyleKey}" Margin="0 4" Text="General Information" FontSize="14.5" FontFamily="pack://application:,,,/Fonts/#Montserrat" TextAlignment="Left"/>
+            <TextBlock Style="{StaticResource TextBlockHeaderStyleKey}" Margin="0 4" Text="全局状态信息" FontSize="14.5" FontFamily="pack://application:,,,/Fonts/#Montserrat" TextAlignment="Left"/>
             <!--<Border HorizontalAlignment="Stretch" SnapsToDevicePixels="True" BorderThickness="0 0 0 1" BorderBrush="{StaticResource LightBorderColorBrush}"/>-->
         </StackPanel>
 
-        <TextBlock Grid.Column="0" Grid.Row="1" Margin="2 4" Padding="0" Text="Audio Input :" Style="{StaticResource TextBlockRightStyleKey}"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="1" Margin="2 4" Padding="0" Text="音频输入：" Style="{StaticResource TextBlockRightStyleKey}"></TextBlock>
         <Border Grid.Column="1" Grid.Row="1" Margin="2 4" BorderThickness="1" SnapsToDevicePixels="True" BorderBrush="{StaticResource LightBorderColorBrush}">
             <TextBlock TextAlignment="Left" Text="{Binding Device.DeviceName, Mode=OneWay}"/>
         </Border>
@@ -122,7 +122,7 @@
             </Ellipse>
         </Grid>
 
-        <TextBlock Grid.Column="0" Margin="2 4" Padding="0" Grid.Row="2" Text="Transmitter :" FontFamily="pack://application:,,,/Fonts/#Montserrat"></TextBlock>
+        <TextBlock Grid.Column="0" Margin="2 4" Padding="0" Grid.Row="2" Text="信号处理：" FontFamily="pack://application:,,,/Fonts/#Montserrat"></TextBlock>
         <Grid Grid.Column="1" Grid.Row="2" Margin="0 4" HorizontalAlignment="Stretch" >
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="3*"></ColumnDefinition>
@@ -145,7 +145,7 @@
             <controls:ChannelMonitor Data="{Binding RawChannelData}" Background="Crimson"/>
         </Grid>
 
-        <TextBlock Grid.Column="0" Grid.Row="3" Margin="2 4" Padding="0" Text="Filter :" FontFamily="pack://application:,,,/Fonts/#Montserrat"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="3" Margin="2 4" Padding="0" Text="频道过滤：" FontFamily="pack://application:,,,/Fonts/#Montserrat"></TextBlock>
         <Grid Grid.Column="1" Grid.Row="3" Margin="0 4" HorizontalAlignment="Stretch" >
             <Border Margin="2 0" BorderThickness="1" SnapsToDevicePixels="True" BorderBrush="{StaticResource LightBorderColorBrush}">
                 <Border.Style>
@@ -161,7 +161,7 @@
                 <TextBlock TextAlignment="Left">
                     <TextBlock.Style>
                         <Style TargetType="{x:Type TextBlock}" BasedOn="{StaticResource {x:Type TextBlock}}">
-                            <Setter Property="Text" Value="--- No Filter ---"/>
+                            <Setter Property="Text" Value="--- 无过滤器 ---"/>
                             <Style.Triggers>
                                 <DataTrigger Binding="{Binding IsFilterEnabled}" Value="True">
                                     <Setter Property="Text" Value="{Binding FilterName}"/>
@@ -188,7 +188,7 @@
         </Grid>
 
 
-        <TextBlock Grid.Column="0" Grid.Row="4" Margin="2 4" Padding="0" Text="vJoy Monitor :" FontFamily="pack://application:,,,/Fonts/#Montserrat"></TextBlock>
+        <TextBlock Grid.Column="0" Grid.Row="4" Margin="2 4" Padding="0" Text="驱动状态：" FontFamily="pack://application:,,,/Fonts/#Montserrat"></TextBlock>
         <Border Grid.Column="1" Grid.Row="4" Margin="2 4" BorderThickness="1" SnapsToDevicePixels="True" BorderBrush="{StaticResource LightBorderColorBrush}">
             <TextBlock TextAlignment="Left" Text="{Binding JoystickName, Mode=OneWay}"></TextBlock>
         </Border>

@@ -16,7 +16,7 @@
     
     <StackPanel>
 
-        <controls:ControlContainer Title="{Binding VJoyVersion, Mode=OneWay}" TitleStringFormat="vJoy Device (v{0})" Description="vJoy device to output decoded signal data.">
+        <controls:ControlContainer Title="{Binding VJoyVersion, Mode=OneWay}" TitleStringFormat="vJoy 设备 (v{0})" Description="设定用于处理输出信号的 vJoy 驱动虚拟设备">
             <ComboBox Margin="0" 
                       VerticalAlignment="Center" 
                       HorizontalAlignment="Right" 

@@ -16,12 +16,12 @@
 
     <Grid>
         <TabControl TabStripPlacement="Left" >
-            <TabItem Header="Logging" Width="120" >
+            <TabItem Header="日志和记录" Width="120" >
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <local:LoggingTab DataContext="{Binding LoggingViewModel}"/>
                 </ScrollViewer>
             </TabItem>
-            <TabItem Header="About" Width="120"  >
+            <TabItem Header="关于本软件" Width="120"  >
                 <ScrollViewer HorizontalScrollBarVisibility="Disabled" VerticalScrollBarVisibility="Auto">
                     <local:AboutTab  DataContext="{Binding AboutViewModel}"/>
                 </ScrollViewer>

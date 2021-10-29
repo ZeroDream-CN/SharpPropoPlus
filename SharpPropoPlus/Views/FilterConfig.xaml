@@ -36,7 +36,7 @@
 
     <StackPanel>
 
-        <controls:ControlContainer Title="Toggle Signal Filter" Description="Enable or disable signal filtering with the desired filter (below).">
+        <controls:ControlContainer Title="启用信号过滤器" Description="启用或禁用指定的信号过滤器，过滤器可对输入信号进行调整">
             <ToggleButton IsChecked="{Binding IsEnabled, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" 
                           HorizontalAlignment="Right" 
                           VerticalAlignment="Center" 
@@ -44,7 +44,7 @@
                           Style="{StaticResource AnimatedSwitch}"/>
         </controls:ControlContainer>
 
-        <controls:ControlContainer Title="Signal Filter" Description="{x:Null}">
+        <controls:ControlContainer Title="信号过滤器" Description="{x:Null}">
             <ComboBox Margin="0" 
                       VerticalAlignment="Center" 
                       HorizontalAlignment="Right" 
@@ -90,7 +90,7 @@
                           Style="{StaticResource AnimatedSwitch}"/>
         </controls:ControlContainer>-->
 
-        <controls:ControlContainer Title="Input">
+        <controls:ControlContainer Title="输入信号">
             <controls:ControlContainer.Style>
                 <Style TargetType="{x:Type controls:ControlContainer}" BasedOn="{StaticResource {x:Type controls:ControlContainer}}">
                     <Setter Property="Visibility" Value="Hidden"/>
@@ -106,7 +106,7 @@
             </controls:ControlContainer.Description>
         </controls:ControlContainer>
 
-        <controls:ControlContainer Title="Output">
+        <controls:ControlContainer Title="输出信号">
             <controls:ControlContainer.Style>
                 <Style TargetType="{x:Type controls:ControlContainer}" BasedOn="{StaticResource {x:Type controls:ControlContainer}}">
                     <Setter Property="Visibility" Value="Hidden"/>

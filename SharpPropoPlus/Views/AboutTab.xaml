@@ -43,7 +43,7 @@
 
                 <controls:ControlContainer.Description>
                     <TextBlock Style="{StaticResource TextBlockLightStyleKey}" TextAlignment="Center">
-                        <Run Text="Version"/>
+                        <Run Text="版本"/>
                         <Run Style="{StaticResource RunBoldStyleKey}" Text="{Binding FileVersion}"/>
                         <LineBreak/>
                         <Run Text="Copyright ©"/>
@@ -57,7 +57,7 @@
             <controls:ControlContainer>
                 <controls:ControlContainer.Title>
                     <TextBlock Style="{StaticResource TextBlockLightStyleKey}" Margin="0" TextAlignment="Center">
-                        <Run Text="Contributors"/>
+                        <Run Text="贡献者"/>
                     </TextBlock>
                 </controls:ControlContainer.Title>
 
@@ -65,7 +65,8 @@
                     <TextBlock Style="{StaticResource TextBlockLightStyleKey}" TextAlignment="Center">
 
                         <Hyperlink Command="{Binding HyperlinkCommand}" CommandParameter="https://github.com/Radrik5">Dmitry Oksenchuk</Hyperlink>
-
+                        <Hyperlink Command="{Binding HyperlinkCommand}" CommandParameter="https://github.com/kasuganosoras">Akkariin Meiko</Hyperlink>
+                        
                     </TextBlock>
                 </controls:ControlContainer.Description>
             </controls:ControlContainer>
@@ -73,9 +74,9 @@
             <controls:ControlContainer>
                 <controls:ControlContainer.Title>
                     <TextBlock Style="{StaticResource TextBlockLightStyleKey}" Margin="0" TextAlignment="Center">
-                        <Run Text="#PropoPlus is based on"/>
+                        <Run Text="#PropoPlus 基于"/>
                         <Hyperlink Command="{Binding HyperlinkCommand}" CommandParameter="http://www.smartpropoplus.com">SmartPropoPlus</Hyperlink>
-                        <Run Text="by"/>
+                        <Run Text="作者"/>
                     </TextBlock>
                 </controls:ControlContainer.Title>
 
@@ -90,7 +91,7 @@
             <controls:ControlContainer>
                 <controls:ControlContainer.Title>
                     <TextBlock Style="{StaticResource TextBlockLightStyleKey}" Margin="0" TextAlignment="Center">
-                        <Run Text="#PropoPlus uses software developed by the community"/>
+                        <Run Text="#PropoPlus 使用了以下由社区开发的软件和技术"/>
                     </TextBlock>
                 </controls:ControlContainer.Title>
 

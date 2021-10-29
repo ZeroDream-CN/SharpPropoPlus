@@ -7,7 +7,7 @@ namespace SharpPropoPlus.Audio.Enums
         /// <summary>
         /// Automatic
         /// </summary>
-        [Description("Automatic (Default)")] Automatic,
+        [Description("自动（默认）")] Automatic,
 
         /// <summary>
         /// Left Channel

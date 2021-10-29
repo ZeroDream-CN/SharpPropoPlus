@@ -18,7 +18,7 @@
 
     <StackPanel>
 
-        <controls:ControlContainer Title="Input Device" Description="Audio (input) device where the transmitter is connected.">
+        <controls:ControlContainer Title="输入设备" Description="选择当前遥控器已连接到的音频输入接口">
             <ComboBox Style="{StaticResource AudioEndPointComboBoxStyle}"
                       Margin="0" 
                       VerticalAlignment="Center" 
@@ -29,7 +29,7 @@
                       SelectedItem="{Binding SelectedAudioEndPoint, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}" />
         </controls:ControlContainer>
 
-        <controls:ControlContainer Title="Bitrate" Description="Number of audio samples carried per second (higher is better).">
+        <controls:ControlContainer Title="音频速率" Description="选择要使用的音频解码速率，推荐越大越好">
             <ComboBox Margin="0" 
                       VerticalAlignment="Center" 
                       HorizontalAlignment="Right" 
@@ -45,7 +45,7 @@
             </ComboBox>
         </controls:ControlContainer>
 
-        <controls:ControlContainer Title="Source Channel" Description="Audio signal communications channel.">
+        <controls:ControlContainer Title="输入声道" Description="选择要使用的音频声道">
             <ComboBox Margin="0" 
                       VerticalAlignment="Center" 
                       HorizontalAlignment="Right" 
@@ -75,10 +75,10 @@
         <controls:ControlContainer  >
             <controls:ControlContainer.Style>
                 <Style TargetType="{x:Type controls:ControlContainer}" BasedOn="{StaticResource {x:Type controls:ControlContainer}}">
-                    <Setter Property="Title" Value="Audio Levels"/>
+                    <Setter Property="Title" Value="音量级别"/>
                     <Style.Triggers>
                         <DataTrigger Binding="{Binding SelectedAudioEndPoint.Channels}" Value="1">
-                            <Setter Property="Title" Value="Audio Level"/>
+                            <Setter Property="Title" Value="音量级别"/>
                         </DataTrigger>
                     </Style.Triggers>
                 </Style>

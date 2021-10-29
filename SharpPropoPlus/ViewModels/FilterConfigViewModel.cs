@@ -36,8 +36,8 @@ namespace SharpPropoPlus.ViewModels
 
             IsEnabled = Application.Instance.FilterManager.IsEnabled;
 
-            const string strRawChannel = "Transmitter Channel";
-            const string strFilterChannel = "Filter Channel";
+            const string strRawChannel = "接收机通道";
+            const string strFilterChannel = "过滤后通道";
 
             RawChannelData = new ObservableCollection<IChannelData>();
             FilteredChannelData = new ObservableCollection<IChannelData>();
